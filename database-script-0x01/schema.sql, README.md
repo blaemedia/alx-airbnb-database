@@ -24,6 +24,7 @@ CREATE TABLE User (
 CREATE INDEX idx_user_email ON User(email);
 
 CREATE TABLE Property (
+
     property_id UUID PRIMARY KEY,
     host_id UUID NOT NULL,
     name VARCHAR(255) NOT NULL,
@@ -40,6 +41,7 @@ CREATE INDEX idx_property_host_id ON Property(host_id);
 CREATE INDEX idx_property_location ON Property(location);
 
 CREATE TABLE Booking (
+
     booking_id UUID PRIMARY KEY,
     property_id UUID NOT NULL,
     user_id UUID NOT NULL,
@@ -57,6 +59,7 @@ CREATE INDEX idx_booking_property_id ON Booking(property_id);
 CREATE INDEX idx_booking_user_id ON Booking(user_id);
 
 CREATE TABLE Payment (
+
     payment_id UUID PRIMARY KEY,
     booking_id UUID NOT NULL,
     amount DECIMAL(10,2) NOT NULL,
@@ -69,6 +72,7 @@ CREATE TABLE Payment (
 CREATE INDEX idx_payment_booking_id ON Payment(booking_id);
 
 CREATE TABLE Review (
+
     review_id UUID PRIMARY KEY,
     property_id UUID NOT NULL,
     user_id UUID NOT NULL,
@@ -83,6 +87,7 @@ CREATE TABLE Review (
 CREATE INDEX idx_review_property_id ON Review(property_id);
 
 CREATE TABLE Message (
+
     message_id UUID PRIMARY KEY,
     sender_id UUID NOT NULL,
     recipient_id UUID NOT NULL,
