@@ -150,7 +150,13 @@ This document describes the entities, attributes, and relationships for the syst
 - **ENUM fields** restrict values to valid states (e.g., roles, status).  
 - **Relationships** enforce referential integrity via foreign keys.
 
-![ERD entity relationship](alx-airbnb-database ER.diagram.png)
+  ## 🧩 Entity Relationship Diagram
+
+Below is the visual representation of the database entities and their relationships:
+
+![Entity Relationship Diagram](./ER.diagram.png)
+
+
 ---
 
 
