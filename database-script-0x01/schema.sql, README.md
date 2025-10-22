@@ -10,6 +10,7 @@ Define the database schema by creating all required tables, setting constraints,
 sql
 CREATE TABLE User (
     user_id UUID PRIMARY KEY,
+    
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
