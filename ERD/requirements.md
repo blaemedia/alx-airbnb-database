@@ -154,7 +154,7 @@ This document describes the entities, attributes, and relationships for the syst
 
 Below is the visual representation of the database entities and their relationships:
 
-![Entity Relationship Diagram](./ERD.diagram.png)
+![Entity Relationship Diagram](./alx-airbnb-database-ER-diagram.png)
 
 
 ---
