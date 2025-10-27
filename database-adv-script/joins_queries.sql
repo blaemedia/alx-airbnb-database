@@ -63,6 +63,8 @@ ON
     b.user_id = u.user_id;
 
 
+
+
 SELECT 
     p.property_id,
     p.property_name,
