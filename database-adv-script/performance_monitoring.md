@@ -1,11 +1,8 @@
-Step 1: Enable Profiling in MySQL
--- Step 1: Turn on profiling for the current session
+### Step 1: Enable Profiling in MySQL
+```
 SET profiling = 1;
-
-Step 2: Run a Frequently Used Query
-
-We’ll use a booking report query that joins multiple tables — this is a typical real-world performance bottleneck.
-
+```
+```
 -- Step 2: Run a commonly used query
 SELECT 
     u.first_name,
@@ -22,6 +19,7 @@ LEFT JOIN Payments pay ON b.booking_id = pay.booking_id
 WHERE b.start_date BETWEEN '2024-01-01' AND '2024-12-31'
   AND pay.status = 'Completed'
 ORDER BY b.start_date DESC;
+
 
 Step 3: Analyze Query Execution with SHOW PROFILES
 -- Step 3: View all executed profiles in this session
@@ -127,11 +125,7 @@ CPU Load	80–90%	25–30%
 ✅ Improvements Observed
 
 Index range scans replaced full scans.
-
 Composite indexes on (start_date, status) improved filtering and sorting.
-
 Partitioning reduced the number of scanned rows.
-
 Query time reduced by ~84% on large datasets.
-
 Less temporary storage and fewer I/O operations observed via SHOW PROFILE.
