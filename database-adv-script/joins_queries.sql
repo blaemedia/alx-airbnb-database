@@ -80,19 +80,7 @@ ON
     p.property_id = r.property_id;
 
 
-SELECT 
-    p.property_id,
-    p.property_name,
-    p.location,
-    r.review_id,
-    r.rating,
-    r.comment
-FROM 
-    properties AS p
-LEFT JOIN 
-    reviews AS r
-ON 
-    p.property_id = r.property_id;
+
 
 SELECT 
     u.user_id,
