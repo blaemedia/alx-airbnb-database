@@ -116,3 +116,38 @@ SELECT
     b.booking_date
 FROM users AS u
 RIGHT JOIN bookings AS b ON u.user_id = b.user_id;
+
+
+## 🔍 How to Verify It Works
+
+You can check correctness using these steps:
+
+Count check — total rows should match properties:
+
+SELECT COUNT(*) FROM properties;
+
+Identify properties without reviews:
+SELECT 
+    p.property_id, 
+    p.property_name
+FROM 
+    properties AS p
+LEFT JOIN 
+    reviews AS r
+ON 
+    p.property_id = r.property_id
+WHERE 
+    r.review_id IS NULL;
+
+Compare with an INNER JOIN:
+SELECT 
+    p.property_id,
+    p.property_name,
+    r.review_id
+FROM 
+    properties AS p
+INNER JOIN 
+    reviews AS r
+ON 
+    p.property_id = r.property_id;
+
